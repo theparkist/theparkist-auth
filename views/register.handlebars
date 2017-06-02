@@ -1,8 +1,14 @@
-<h2 class="page-header">Register</h2>
+<h3>Register</h3>
 {{#if errors}}
+      <div data-closable class="callout alert-callout-border alert radius">
+      <strong>Whoops!</strong><br />
       {{#each errors}}
-        <div class="alert alert-danger">{{msg}}</div>
+          {{msg}} <br />
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
       {{/each}}
+      </div>
 {{/if}}
 <form method="post" action="/users/register">
    <div class="form-group">
@@ -25,5 +31,5 @@
     <label>Confirm Password</label>
     <input type="password" class="form-control" placeholder="Password" name="password2">
   </div>
-  <button type="submit" class="button large float-center">Submit</button>
+  <button type="submit" class="button float-center">Submit</button>
 </form>

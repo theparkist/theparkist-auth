@@ -11,35 +11,49 @@
 <body>
 
     <div class="row">
-      <div class="large-12">
-        <div class="top-bar">
-          <h3>The Parkist</h3>
-          <ul class="menu">
-            {{#if user}}
-              <li><a href="/">Dashboard</a></li>
-              <li><a href="/users/logout">Logout</a></li>
-            {{else}}
-              <li><a href="/users/login">Login</a></li>
-              <li><a href="/users/register">Register</a></li>
-            {{/if}}
-          </ul>
-        </div>
+      <div class="medium-6">
+        <h2>The Parkist</h2>
+      </div>
+      <div class="medium-6">
+        <ul class="menu">
+          {{#if user}}
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="/users/logout">Logout</a></li>
+          {{else}}
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+          {{/if}}
+        </ul>
       </div>
     </div>
 
-
     <div class="row">
-      <div class="large-12">
+      <div class="medium-12">
         {{#if success_msg}}
-          <div class="alert alert-success">{{success_msg}}</div>
+          <div data-closable class="callout alert-callout-border success radius">
+            <strong>Yay!</strong> - {{success_msg}}
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         {{/if}}
 
         {{#if error_msg}}
-          <div class="alert alert-danger">{{error_msg}}</div>
+        <div data-closable class="callout alert-callout-border alert radius">
+          <strong>Whoops!</strong> - {{error_msg}}
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         {{/if}}
 
         {{#if error}}
-          <div class="alert alert-danger">{{error}}</div>
+          <div data-closable class="callout alert-callout-border alert radius">
+            <strong>Whoops!</strong> - {{error}}
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         {{/if}}
         
         {{{body}}}

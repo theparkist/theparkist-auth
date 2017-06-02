@@ -2,7 +2,7 @@ var plan = require('flightplan');
 
 var appName = 'the-parkist-auth';
 var username = 'deploy';
-var startFile = 'app.js';
+var startFile = 'bin/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
 

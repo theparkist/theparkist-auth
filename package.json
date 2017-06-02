@@ -1,13 +1,13 @@
 {
-  "name": "loginapp",
+  "name": "TheParkist",
   "version": "1.0.0",
-  "description": "Simple authentication system",
+  "description": "The Parkist App with Authentication",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brad Traversy",
+  "author": "Dan Lin",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "*",
@@ -19,6 +19,7 @@
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+    "flightplan": "^0.6.16",
     "mongodb": "*",
     "mongoose": "*",
     "passport": "*",

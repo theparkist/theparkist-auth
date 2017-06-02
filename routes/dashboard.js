@@ -9,7 +9,6 @@ router.get('/', ensureAuthenticated, function(req, res){
 });
 
 
-
 router.get('/dashboard', function(req, res){
 	res.flash('test', result);
 });

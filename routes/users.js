@@ -40,8 +40,8 @@ router.post('/register', function(req, res){
 	} else {
 		var newUser = new User({
 			name: name,
-			email:email,
-			username: username,
+			email: email.toLowerCase(),
+			username: username.toLowerCase(),
 			password: password
 		});
 
@@ -58,7 +58,7 @@ router.post('/register', function(req, res){
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-   User.getUserByUsername(username, function(err, user){
+   User.getUserByUsername(username.toLowerCase(), function(err, user){
    	if(err) throw err;
    	if(!user){
    		return done(null, false, {message: 'Unknown User'});

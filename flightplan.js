@@ -1,6 +1,6 @@
 var plan = require('flightplan');
 
-var appName = 'the-parkist-auth';
+var appName = 'theparkist-auth';
 var username = 'deploy';
 var startFile = 'bin/www';
 

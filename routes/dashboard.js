@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-var User = require('../models/dashboard');
+var Dashboard = require('../models/dashboard');
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
-	res.render('dashboard');
-});
-
-
-router.get('/dashboard', function(req, res){
-	res.flash('test', result);
+	var SessionUser = req.session;
+	res.render('dashboard', {
+		"userid": SessionUser.passport.user
+	});
+	console.log(SessionUser);
 });
 
 function ensureAuthenticated(req, res, next){
